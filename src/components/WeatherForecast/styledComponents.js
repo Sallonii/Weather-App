@@ -1,7 +1,10 @@
 import styled from 'styled-components'
 
 export const MainContainer = styled.div`
-  background-color: ${props => (props.isDarkTheme ? '#0f0627' : 'transparent')};
+  background-image: ${props =>
+    props.isDarkTheme
+      ? 'linear-gradient(to right, #780f71, #2a0528, #110520)'
+      : 'none'};
   min-height: 100vh;
   padding: 5px;
 `
@@ -18,6 +21,17 @@ export const HeaderContainer = styled.div`
   justify-content: space-around;
   align-items: center;
 `
+
+export const MainHeading = styled.h1`
+  background-image: ${props =>
+    props.isDarkTheme
+      ? 'linear-gradient(to right, #780f71, #2a0528, #110520)'
+      : 'none'};
+  margin: 0px;
+  padding: 20px;
+  color: ${props => (props.isDarkTheme ? 'white' : 'black')};
+`
+
 export const Logo = styled.img`
   height: 50px;
 `
@@ -74,39 +88,53 @@ export const ReactThemeIcon = styled.div`
   cursor: pointer;
   color: ${props => (props.isDarkTheme ? 'white' : 'black')};
 `
-
-export const ContentContainer = styled.div``
-
-export const LocationContainer = styled.div``
-
-export const LocationContentContainer = styled.div`
-  background-image: linear-gradient(
-    to top,
-    ${props => (props.isDarkTheme ? '#F25E8B' : '#9CA3AA')},
-    red
-  );
-  width: 100%;
-  border-radius: 7px;
-  @media screen and (min-width: 500px) {
-    width: 30%;
-  }
-  margin: 20px;
+export const LoaderContainer = styled.div`
+  min-height: 100vh;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: ${props =>
+    props.isDarkTheme
+      ? 'linear-gradient(to bottom, #CE0566, #CE0566,  #E1418E, #F99E6B)'
+      : 'linear-gradient(to right, #DBD7D6, #A29E9B)'};
+  color: ${props => (props.isDarkTheme ? 'white' : 'black')};
+`
+export const NowCardContainer = styled.div`
+  background-image: ${props =>
+    props.isDarkTheme
+      ? 'linear-gradient(to bottom, #CE0566, #CE0566,  #E1418E, #F99E6B)'
+      : 'linear-gradient(to right, #DBD7D6, #A29E9B)'};
+  color: ${props => (props.isDarkTheme ? 'white' : 'black')};
+  border-radius: 10px;
+  margin: 10px;
   padding: 10px;
 `
-export const NowTextContainer = styled.div`
+export const WeatherStatsLi = styled.li`
+  list-style-type: none;
+  background-image: ${props =>
+    props.isDarkTheme
+      ? 'linear-gradient(to bottom, #CE0566, #CE0566,  #E1418E, #F99E6B)'
+      : 'linear-gradient(to right, #DBD7D6, #A29E9B)'};
+  color: ${props => (props.isDarkTheme ? 'white' : 'black')};
+  width: 150px;
+  border-radius: 7px;
+  padding: 5px;
+  margin-top: 10px;
+  height: 100px;
+`
+export const SunriseSunsetContainer = styled.div`
+  background-image: ${props =>
+    props.isDarkTheme
+      ? 'linear-gradient(to bottom, #CE0566, #CE0566,  #E1418E, #F99E6B)'
+      : 'linear-gradient(to right, #DBD7D6, #A29E9B)'};
+  color: ${props => (props.isDarkTheme ? 'white' : 'black')};
+  margin: 10px;
+  padding: 10px;
+  border-radius: 7px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
 `
-
-export const NowText = styled.p`
-  color: ${props => (props.isDarkTheme ? 'white' : 'black')};
-  font-weight: 600;
-`
-
-export const NowIcon = styled.img``
-
-export const Temperature = styled.h1`
-  color: ${props => (props.isDarkTheme ? 'white' : 'black')};
-`
-export const WeatherStatus = styled.p``

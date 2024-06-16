@@ -1,140 +1,82 @@
-In this project, let's build a **Gradient Generator** app by applying the concepts we have learned till now.
+# Weather Forecast App
 
-### Refer to the image below:
+This project is a **Weather Forecast** app built using React, providing real-time weather information for any location. The app features both current weather conditions and a 3-hourly forecast for the next 9 hours. Users can toggle between light and dark themes.
 
-<br/>
-<div style="text-align: center;">
-    <img src="https://assets.ccbp.in/frontend/content/react-js/gradient-generator-output-v0.gif" alt="gradient-generator" style="max-width:70%;box-shadow:0 2.8px 2.2px rgba(0, 0, 0, 0.12)">
-</div>
-<br/>
+## Instructions to Run the Application Locally
 
-### Design Files
+### Prerequisites
 
-<details>
-<summary>Click to view</summary>
-
-- [Extra Small (Size < 576px) and Small (Size >= 576px)](https://assets.ccbp.in/frontend/content/react-js/gradient-generator-sm-output-v0.png)
-- [Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px)](https://assets.ccbp.in/frontend/content/react-js/gradient-generator-lg-output-v0.png)
-
-</details>
+- Node.js (version 12 or later)
+- npm (version 6 or later)
 
 ### Set Up Instructions
 
-<details>
-<summary>Click to view</summary>
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/yourusername/weather-forecast-app.git
+   ```
+2. **Navigate to the project directory:**
+   ```bash
+   cd weather-forecast-app
+   ```
+3. **Install the dependencies:**
+   ```bash
+   npm install
+   ```
+4. **Start the application:**
+   ```bash
+   npm start
+   ```
 
-- Download dependencies by running `npm install`
-- Start up the app using `npm start`
-</details>
+The app should now be running on `http://localhost:3000`.
 
-### Completion Instructions
+## Functionality
 
 <details>
 <summary>Functionality to be added</summary>
 <br/>
 
-The app must have the following functionalities
+The app must have the following functionalities:
 
-- Initially, the selected gradient direction should be the first value in the given `gradientDirectionsList`
-- The initial values for the HTML input elements with type color should be **#8ae323** and **#014f7b** respectively
-- When the values are provided for both the input elements with type color, then provided values should be the text content for the respective paragraph elements
-- When the **Generate** button is clicked after selecting the direction and picking the colors, the background of the app should have a linear gradient with the selected direction and colors provided
-
-- The `GradientGenerator` component will consist `gradientDirectionsList`. It consists of a list of gradient directions objects with the following properties in each gradient directions object
-
-  |    Key      | Data Type |
-  | :--------:  | :-------: |
-  | directionId |  String   |
-  |    value    |  String   |
-  | displayText |  string   |
+- Initially, the app should fetch and display weather details for a default location (e.g., Hyderabad).
+- The user can search for weather details of other cities by entering the city name and clicking the search icon or pressing the Enter key.
+- The app should display the current weather details including temperature, weather status, wind speed, humidity, visibility, feels-like temperature, pressure, sunrise, and sunset times.
+- The app should also display a 3-hourly forecast for the next 9 hours.
+- The theme of the app can be toggled between light and dark modes.
 
 </details>
 
-<details>
-<summary>Components Structure</summary>
+## Brief Description of the Approach and Technologies Used
 
-<br/>
-<div style="text-align: center;">
-    <img src="https://assets.ccbp.in/frontend/content/react-js/gradient-generator-component-breakdown-structure.png" alt="gradetient-generator-component-breakdown-structure" style="max-width:100%;box-shadow:0 2.8px 2.2px rgba(0, 0, 0, 0.12)">
-</div>
-<br/>
+### Approach
 
-</details>
+The Weather Forecast app is built using a modular approach with React components to ensure scalability and maintainability. The app fetches weather data from the OpenWeatherMap API, processes it, and displays it in a user-friendly interface. Key features include real-time weather updates, theme toggling between light and dark modes, and a responsive design to ensure compatibility across various devices.
 
-<details>
-<summary>Implementation Files</summary>
-<br/>
+### Technologies Used
 
-Use these files to complete the implementation:
+- **React**: For building the user interface.
+- **Styled-components**: For styling React components with CSS.
+- **date-fns**: For date and time formatting.
+- **uuid**: For generating unique IDs for list items.
+- **OpenWeatherMap API**: For fetching weather data.
 
-- `src/components/GradientGenerator/index.js`
-- `src/components/GradientGenerator/styledComponents.js`
-- `src/components/GradientDirectionItem/index.js`
-- `src/components/GradientDirectionItem/styledComponents.js`
-</details>
+### Component Structure
 
-### Quick Tips
+- **WeatherForecast**: The main component that handles the overall weather data and user interactions.
+- **Forecast**: A sub-component that handles the 3-hourly weather forecast.
 
-<details close>
-<summary>Click to view</summary>
-<br>
+## Known Issues or Limitations
 
-- The HTML input element with the type **color** is designed for the user to select the **color** from a color picker.
+- **API Key Security**: The API key for OpenWeatherMap is stored in the frontend, which is not secure for a production environment. It's recommended to use a backend server to handle API requests and protect the API key.
+- **Error Handling**: Currently, the app handles some errors (e.g., city not found) but might need more comprehensive error handling for network issues or unexpected API responses.
+- **Performance**: The app fetches data every time the user searches for a new location. Implementing caching or local storage could improve performance.
+- **Accessibility**: While the app is designed to be user-friendly, additional accessibility improvements could be made to support screen readers and keyboard navigation.
 
-  ```jsx
-  <input type="color" />
-  ```
+## Future Enhancements
 
-- You can use the CSS **opacity** property to set the degree of transparency of an element. It has a value in the range of 0 to 1 inclusive.
+- **Unit Testing**: Add unit tests using Jest and React Testing Library.
+- **Advanced Forecast**: Include daily forecasts for the upcoming week.
+- **Localization**: Support multiple languages for a wider audience.
+- **Enhanced UI**: Improve the user interface with animations and additional weather metrics.
 
-  ```
-   opacity: 0.5;
-  ```
-
-</details>
-
-### Important Note
-
-<details>
-<summary>Click to view</summary>
-
-<br/>
-
-**The following instructions are required for the tests to pass**
-
-- The HTML container element for the linear gradient values are applied should have `data-testid` as **gradientGenerator**
-- When a gradient direction button is active then the button should have the CSS property opacity with the value **1**
-- When a gradient direction button is inactive then the button should have the CSS property opacity with the value **0.5**
-
-</details>
-
-### Resources
-
-<details>
-<summary>Colors</summary>
-
-<br/>
-
-<div style="background-color: #8ae323; width: 150px; padding: 10px; color: black">Hex: #8ae323</div>
-<div style="background-color: #014f7b; width: 150px; padding: 10px; color: white">Hex: #014f7b</div>
-<div style="background-color: #ededed; width: 150px; padding: 10px; color: black">Hex: #ededed</div>
-<div style="background-color: #334155; width: 150px; padding: 10px; color: white">Hex: #334155</div>
-<div style="background-color: #ffffff79; width: 150px; padding: 10px; color: black">Hex: #ffffff79</div>
-<div style="background-color: #1e293b; width: 150px; padding: 10px; color: white">Hex: #1e293b</div>
-<div style="background-color: #00c9b7; width: 150px; padding: 10px; color: black">Hex: #00c9b7</div>
-
-</details>
-
-<details>
-<summary>Font-families</summary>
-
-- Roboto
-
-</details>
-
-> ### _Things to Keep in Mind_
->
-> - All components you implement should go in the `src/components` directory.
-> - Don't change the component folder names as those are the files being imported into the tests.
-> - **Do not remove the pre-filled code**
-> - Want to quickly review some of the concepts you’ve been learning? Take a look at the Cheat Sheets.
+Feel free to contribute to this project by submitting issues or pull requests on the [GitHub repository](https://github.com/yourusername/weather-forecast-app).
