@@ -13,7 +13,7 @@ This project is a **Weather Forecast** app built using React, providing real-tim
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/weather-forecast-app.git
+   git clone https://github.com/Sallonii/Weather-App.git
    ```
 2. **Navigate to the project directory:**
    ```bash
@@ -79,4 +79,4 @@ The Weather Forecast app is built using a modular approach with React components
 - **Localization**: Support multiple languages for a wider audience.
 - **Enhanced UI**: Improve the user interface with animations and additional weather metrics.
 
-Feel free to contribute to this project by submitting issues or pull requests on the [GitHub repository](https://github.com/yourusername/weather-forecast-app).
+Feel free to contribute to this project by submitting issues or pull requests on the [GitHub repository](https://github.com/Sallonii/Weather-App).
