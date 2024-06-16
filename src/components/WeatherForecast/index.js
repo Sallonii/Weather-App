@@ -30,6 +30,7 @@ import {
   NowCardContainer,
   WeatherStatsLi,
   SunriseSunsetContainer,
+  Footer,
 } from './styledComponents'
 
 // Constants to manage API request states
@@ -245,6 +246,9 @@ class WeatherForecast extends Component {
         <MainContainer isDarkTheme={isDarkTheme}>
           <MainHeading isDarkTheme={isDarkTheme}>Today Highlights</MainHeading>
           {this.renderMainPage()}
+          <Footer isDarkTheme={isDarkTheme}>
+            <p>This page is Developed by Saloni Chandra</p>
+          </Footer>
         </MainContainer>
       )}
     </ThemeContext.Consumer>

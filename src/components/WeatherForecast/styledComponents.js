@@ -138,3 +138,9 @@ export const SunriseSunsetContainer = styled.div`
   justify-content: center;
   align-items: center;
 `
+export const Footer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: ${props => (props.isDarkTheme ? '#CE0566' : 'black')};
+`
